@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Buttons</title>
+<style>
+
+body {
+    background-color: #d1d1d1; /* Light gray background for body */
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .welcome {
+    font-size: 40px; /* Adjust welcome text size based on your preference */
+    color: #2196F3; /* Blue color for welcome text */
+    text-align: center;
+    margin-bottom: 40px;
+    animation: animateWelcome 1s ease-in-out forwards; /* Animation for welcome text */
+  }
+
+  /* Responsive Styles (unchanged from previous example) */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+    .welcome {
+      font-size: 30px; /* Adjust welcome text size for smaller screens */
+      margin-bottom: 20px; /* Reduce spacing between elements on smaller screens */
+    }
+    .button {
+      font-size: 24px; /* Adjust button font size for smaller screens */
+      padding: 20px 40px; /* Adjust button padding for smaller screens */
+    }
+  }
+
+  /* Original Styles (unchanged from previous example) */
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 25px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    margin: 4px 2px;
+    cursor: not-allowed; /* Cursor for disabled button */
+  }
+  .button.disabled {
+    background-color: #ddd; /* Grayed out for disabled button */
+    cursor: default; /* Default cursor for disabled button */
+  }
+  .left {
+    animation: animateLeft 0.5s ease-in-out forwards;
+  }
+  .right.disabled { /* Apply disabled styles to right button */
+    animation: animateRight 0.5s ease-in-out forwards;
+  }
+
+  @keyframes animateLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes animateRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes animateWelcome {
+    from { opacity: 0; transform: translateY(20px); } /* Start invisible and translate down */
+    to { opacity: 1; transform: translateY(0); } /* End fully visible and centered */
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <a href="engagement.html" class="button left">Engagement Photo Gallery</a>
+    <a href="#" class="button right disabled">Marriage Photo Gallery (coming soon)</a>  </div>
+</body>
+</html>
